@@ -2,9 +2,6 @@ FROM didierc/baseimage-gui:latest
 
 RUN set -x && \
     apt-get update -y && \
-    echo "========== Japanese font support (github issue #2) ==========" && \
-    apt-get install -y fonts-takao fonts-takao-mincho && \
-    echo "=============================================================" && \
     apt-get install -y locales software-properties-common && \
     add-apt-repository -y ppa:musicbrainz-developers/stable && \
     apt-get install -y picard && \
@@ -24,3 +21,4 @@ ENV APP_NAME="MusicBrainz Picard" \
     LANG="en_US.UTF-8" \
     LANGUAGE="en_US.UTF-8"
     
+b
