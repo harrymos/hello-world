@@ -21,4 +21,3 @@ ENV APP_NAME="MusicBrainz Picard" \
     LANG="en_US.UTF-8" \
     LANGUAGE="en_US.UTF-8"
     
-b
