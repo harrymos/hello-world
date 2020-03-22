@@ -1,5 +1,5 @@
 
-FROM didierc/aarch64:baseimage-gui:latest
+FROM didierc/baseimage-gui:latest
 RUN uname -a
 RUN set -x && \
     apt-get update -y && \
