@@ -1,0 +1,43 @@
+
+
+#Build Multi arch images, tags as latest and todays date for versioning. Define Dockerfile for the build and push to Docker Hub.
+docker buildx build --platform linux/amd64,linux/armhf -t harrymos/get_iplayer:latest -t harrymos/get_iplayer:20200419 --file Dockerfile -push .
+
+#List images
+docker images
+docket ls
+docker push harrymos/get_iplayer:linux
+
+#Run container -v local shared path. With output to a logfile.
+docker run -v /share/Shared/Audio/data:/data harrymos/get_iplayer --type=radio --pid m000h8ng --force --overwrite --verbose /data/log.txt 2>&1
+
+#Run container and then remove after exiting.
+docker run -v /share/Shared/Audio/data:/data --rm harrymos/get_iplayer --type=radio --pid m000h8ng --force --overwrite
+
+#Remove a local image (-f= force)
+docker rmi -f 0dad3e17f3da
+
+#Rename docker container
+docker container rename eager_aryabhata get_iplayer
+#List all containers.
+docker container ps -a
+
+#?????????
+docker logs --details 004cb0c2c99d
+
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username (harrymos):
+Password:
+Login Succeeded
+[~] # docker pull harrymos/get_iplayer:latest
+latest: Pulling from harrymos/get_iplayer
+d9bf605ce3d4: Already exists
+61af519c0073: Pull complete
+7a81f65aaaac: Pull complete
+7e1f12391101: Pull complete
+92f7e9d217c0: Pull complete
+22ef3c9f8b58: Pull complete
+Digest: sha256:30ebed135111eed8ec3841b7d8e3e6cfdb66c94df84c5696d96ea429a2917241
+Status: Downloaded newer image for harrymos/get_iplayer:latest
+[~] # 
+

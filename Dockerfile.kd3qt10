@@ -1,0 +1,23 @@
+FROM shiomax/docker-baseimage-gui:debian-10-arm
+
+RUN set -x && \
+    apt-get update -y && \
+    apt-get install -y locales software-properties-common && \
+	apt-get install -y kid3-qt && \
+    echo "#!/bin/sh" >> /startapp.sh && \
+    echo "export HOME=/config" >> /startapp.sh && \
+    echo "/usr/bin/kid3-qt" >> /startapp.sh && \
+    chmod a+x /startapp.sh && \
+    locale-gen en_US.UTF-8 && \
+    mkdir -p /tmp/run/user/app && \
+    chmod 0700 /tmp/run/user/app && \
+    echo "========== Clean-up ==========" && \
+	ls /var/lib/apt/lists/* && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV APP_NAME="Kid3-qt" \
+    LC_ALL="en_US.UTF-8" \
+    LANG="en_US.UTF-8" \
+    LANGUAGE="en_US.UTF-8" \
+	QT_X11_NO_MITSHM="1"
