@@ -12,14 +12,15 @@ This repository contains three important files: The HTML code for your first web
 
 Dockerfile - Dockerfile.gip325
 This is get_iplayer, based on alpine latest image. AtomicParsley from testing repostories.
-Architecture - armv7 & amd64
+Architecture - armv7 & amd64.
 Currently built as harrymos/get_iplayer
 
 Dockerfile - Dockerfile.kd3qt10
 This is Kid3-qt, based on shiomax/docker-baseimage-gui:debian-10-arm image.
 Kid3 - Audio Tagger, used to tag audio files. Used instead of puddletag as puddletag last stable build was 2016 and couldn't get it to work in docker environment.
+Architecture - armv7.
 Currently built as harrymos/hello-world:armhf
-Architecture - armv7
+
 
 You are currently viewing your project's **README** file. **_README_** files are like cover pages or elevator pitches for your project. They are written in plain text or [Markdown language](https://guides.github.com/features/mastering-markdown/), and usually include a paragraph describing the project, directions on how to use it, who authored it, and more.
 
